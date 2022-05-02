@@ -89,7 +89,7 @@ For example: charCode(['h','i']) returns [104, 105].
 const charCode = (arr) => {
   return arr.map(letter => letter.charCodeAt());
 };
-
+ 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
