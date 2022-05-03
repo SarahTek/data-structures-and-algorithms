@@ -35,9 +35,8 @@ Write a function named containsAnd that, given an array of strings as input, use
 
 For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
-
 const containsAnd = (arr) => {
-
+  return arr.filter(Strings => Strings.includes('and'));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,7 +48,8 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+  let odds = arr.filter(Integers => (Integers % 2));
+  return odds;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,7 +61,8 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  const Four = arr.filter(four => (!forbiddenValues.includes(four)));
+  return Four;
 };
 
 /* ------------------------------------------------------------------------------------------------
