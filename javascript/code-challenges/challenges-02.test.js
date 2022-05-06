@@ -89,7 +89,7 @@ For example: charCode(['h','i']) returns [104, 105].
 const charCode = (arr) => {
   return arr.map(letter => letter.charCodeAt());
 };
- 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
@@ -200,9 +200,16 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
-};
+  return arr.sort((a, b) => a.lastName > b.lastName ? 1 : (a.lastName < b.lastName ?  -1 : 0));
 
+  // return arr.sort((a , b) => {
+  //   if (a.lastName > b.lastName){
+  //     return 1;
+  //   }if (a.lastName > b.lastName){
+  //     return -1;
+  // }else (a.lastName > b.lastName){
+  //   return 0;
+  // }
 /* ------------------------------------------------------------------------------------------------
 TESTS
 

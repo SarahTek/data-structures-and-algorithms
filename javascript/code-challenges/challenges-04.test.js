@@ -21,11 +21,7 @@ function lower(str) {
   return str.toLowerCase();
 }
 
-const updateAnimal = (arr, callback) => {
-  let newArray = [];
-  arr.map(value => newArray.push(callback(value)));
-  return newArray;
-};
+const updateAnimal = (arr, callback) => arr.map(value => callback(value));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -56,7 +52,7 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
- const sortBackwards = (arr) => arr.sort((a, b) => b - a);
+const sortBackwards = (arr) => arr.sort((a, b) => b - a);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
