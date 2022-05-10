@@ -40,9 +40,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 ------------------------------------------------------------------------------------------------ */
 
-const addPurchases = (arr) => {
-  return arr.reduce((total, item) => total + item.purchasePrice, 0);
-};
+const addPurchases = (arr) => arr.reduce((total, item) => total + item.purchasePrice, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -53,7 +51,7 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
- 
+ arr.reduce()
 };
 
 /* ------------------------------------------------------------------------------------------------
