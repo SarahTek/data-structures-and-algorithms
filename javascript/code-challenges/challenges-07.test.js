@@ -63,7 +63,7 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   for (let i = 0; i <= str.length; i++) {
-    result.push(str.split('').slice(i).join(''));
+    result.push(str.slice(i));
   }
   return result;
 };
@@ -174,7 +174,7 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for (let i )
 };
 
 /* ------------------------------------------------------------------------------------------------
