@@ -52,9 +52,11 @@ let characters = [
   }
 ];
 
-const sortByChildren = (charArray) => {
- // Solution code here...
+const sortByChildren = (charArray) => charArray.sort(a , b) => {
+
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -63,9 +65,7 @@ Write a function named containsW that takes in a string. This function should us
 
 ------------------------------------------------------------------------------------------------ */
 
-const containsW = (str) => {
-  // Solution code here...
-};
+const containsW = (str) => /w/.test(str);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
