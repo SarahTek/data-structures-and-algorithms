@@ -53,7 +53,9 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-
+return charArray.sort((a,b) => {
+  if 
+})
 };
 
 /* ------------------------------------------------------------------------------------------------
