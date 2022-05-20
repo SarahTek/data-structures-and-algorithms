@@ -29,7 +29,11 @@ const courseInfo = {
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
+  let property = [];
+  for (let obj in courseInfo) {
+    property.push(obj);
+  }
+  return property;
 };
 
 /* ------------------------------------------------------------------------------------------------
