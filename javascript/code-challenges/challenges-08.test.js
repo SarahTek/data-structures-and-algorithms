@@ -52,11 +52,9 @@ let characters = [
   }
 ];
 
-const sortByChildren = (charArray) => charArray.sort(a , b) => {
+const sortByChildren = (charArray) => {
 
 };
-
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -103,7 +101,7 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,7 +111,8 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  const value2 = /^[A-J]/gm;
+  return arr.filter(value => value.match(value2));
 };
 
 /* ------------------------------------------------------------------------------------------------
