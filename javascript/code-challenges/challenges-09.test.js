@@ -7,6 +7,7 @@ Write a function that finds the maximum value in an array
 using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
+
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   let maxArray = arr.reduce((acc, currentValue) => {
@@ -45,7 +46,11 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+  if (Object.values(obj).includes(value)) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,8 +73,14 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+  const arr = [];
+  const result = Object.entries(obj);
+  result.map((value) => {
+    arr.push(obj[value]);
+  });
+  return arr;
 };
+
 
 
 
@@ -122,11 +133,9 @@ const characters = [
   },
 ];
 
-const getHouses = (arr) => {
-  let houses = [];
-  // Solution code here...
-  return houses;
-};
+const getHouses = (arr) =>{
+  
+}
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
