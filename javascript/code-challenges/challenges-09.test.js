@@ -134,9 +134,7 @@ const characters = [
   },
 ];
 
-const getHouses = (arr) => {
-
-}
+const getHouses = (arr) => arr.map(key => key.house);
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
