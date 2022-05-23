@@ -149,8 +149,13 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-
+  const child = false;
+  arr.map((value) => {
+    if (value.name === character && arr.children !== undefined) {
+      child = true;
+    }
+  });
+  return child;
 };
 
 /* ------------------------------------------------------------------------------------------------
