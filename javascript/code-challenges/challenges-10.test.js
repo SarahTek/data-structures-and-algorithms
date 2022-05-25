@@ -54,7 +54,12 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  
+  let total = 0;
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      total += matrix[i][j];
+    }
+  } return total;
 };
 
 
@@ -81,9 +86,19 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
-
+  const totalArr = [];
+  stores.map(sale => {
+    sale.map((acc, i) => {
+      if (totalArr[i]) {
+        totalArr[i] += acc;
+      } else {
+        totalArr[i] = acc;
+      }
+    });
+  });
+  return totalArr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
