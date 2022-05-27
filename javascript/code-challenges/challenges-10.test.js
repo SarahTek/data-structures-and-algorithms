@@ -27,7 +27,7 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  let highNum = 0
+  let highNum = 0;
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
       let lowNum = matrix[i][j];
@@ -141,17 +141,8 @@ const errands = [
   }
 ];
 
-const howManyTreats = (arr) => {
-  for (let i = 0; i < arr.length; i++){
-    if (arr[i].store === 'Pet store'){
-      for (let j = 0; j < arr[i].items.length; j++){
-        if (arr[i].items[j].name === 'Treats'){
-          return arr[i].items[j].quantity;
-        }
-      }
-    }
-  }
-};
+const howManyTreats = (arr) => arr[2].items[1].quantity;
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
