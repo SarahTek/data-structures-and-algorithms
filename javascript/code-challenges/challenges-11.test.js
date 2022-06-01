@@ -18,8 +18,8 @@ Becomes:
 ]
 ------------------------------------------------------------------------------------------------ */
 
-function transformToLis(obj){
-  // Solution code here...
+function transformToLis(obj) {
+  return Object.entries(obj).map(value => `<li>${value[0]}: ${value[1]}</li>`);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  return input.map(arr => arr.filter(value => value === target)).flat().length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,7 +47,7 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  return input.flat().reduce((a, b) => a + b);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,17 +63,18 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  return input.map(array => {
+    return array.filter(element => typeof element === 'number' && element % 5 === 0).map(num => Math.pow(2, num));
+  });
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
-
+ 
 Write a function named findMaleAndFemale that, given the Star Wars data, below,
 returns the names of the characters whose gender is either male or female.
-
+ 
 The names should be combined into a single string with each character name separated by "and".
-
+ 
 For example, "C-3PO and Luke Skywalker".
 ------------------------------------------------------------------------------------------------ */
 
@@ -129,34 +130,33 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  return data.filter(char => char.gender === 'male' || char.gender === 'female').map(character => character.name).join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
-
+ 
 Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the character who is the shortest in height.
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((shortest, nextChar) => parseInt(shortest.height) < parseInt(nextChar.height) ? shortest : nextChar).name;
 };
-
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenges-10.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
   test('It should return a list of key value pairs inside of li tags', () => {
-    expect(transformToLis({name: 'bob', age: 32})[0]).toStrictEqual(`<li>name: bob</li>`);
-    expect(transformToLis({name: 'bob', age: 32})[1]).toStrictEqual(`<li>age: 32</li>`);
+    expect(transformToLis({ name: 'bob', age: 32 })[0]).toStrictEqual(`<li>name: bob</li>`);
+    expect(transformToLis({ name: 'bob', age: 32 })[1]).toStrictEqual(`<li>age: 32</li>`);
     expect(transformToLis({})).toStrictEqual([]);
   });
 });
