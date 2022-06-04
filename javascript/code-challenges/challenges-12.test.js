@@ -7,7 +7,7 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 ------------------------------------------------------------------------------------------------ */
 
 const replaceZeros = (string) => {
-  // Solution code here...
+  return string.replace(/0/g, 'zero');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -19,7 +19,8 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  // Solution code here...
+  const pattern = /^\d{4}$/g;
+  return pattern.test(pin);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,7 +32,8 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
-  // Solution code here...
+  const pattern = /^\D{5,10}$/g;
+  return pattern.test(word);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -43,7 +45,8 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
-  // Solution code here...
+  const pattern = /[a-zA-Z]+\d+/g;
+  return pattern.test(string);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +66,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  // Solution code here...
+  const emailPattern = /^[A-Za-z0-9]+\.?[A-Za-z0-9]+?@[A-Za-z0-9]+.(net|com|org)$/;
+  return emailPattern.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -88,7 +92,8 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+  const pattern = /^(\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/;
+  return pattern.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,7 +106,7 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 ------------------------------------------------------------------------------------------------ */
 
 const findTagNames = elements => {
-  // Solution code here...
+  return elements.map(regex => regex.match(/<(\/[a-z]+\d?)>/g)).reduce((a, b) => a.concat(b.map(value => value.slice(1, (value.length - 1)))), []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -213,7 +218,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the closing tags', () => {
     expect(findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>'])).toStrictEqual(['/h1', '/p']);
   });
