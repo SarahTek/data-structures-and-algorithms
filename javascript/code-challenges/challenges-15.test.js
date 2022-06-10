@@ -11,8 +11,10 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  // Solution code here...
-}
+  let regex_pattern  = /^(Mr|Mrs|Ms|Dr). [A-Za-z]+$/;
+  let regexFilter = arr.filter(regex => regex_pattern.test(regex));
+  return regexFilter;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -23,7 +25,7 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  // Solution code here...
+  return arr.map(val => val.charAt(0).toUpperCase() + val.substr(1));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,7 +100,14 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  const luke = arr.find(char => char.name === 'Luke Skywalker');
+  return arr.filter(char => parseInt(char.mass) > parseInt(luke.mass)).reduce((acc, val, idx, arr) => {
+    let delvalue = '';
+    if (idx === arr.length - 1) {
+      delvalue = ' - ';
+    }
+    return acc += delvalue + val.name;
+  }, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,7 +125,15 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => {
+    if (a[property] < b[property]) {
+      return -1;
+    } else if (a[property] > b[property]) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,7 +149,7 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  // Solution code here...
+  return /^https:\/\//.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -155,7 +172,7 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
