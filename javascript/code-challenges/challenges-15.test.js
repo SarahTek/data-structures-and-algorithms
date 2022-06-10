@@ -149,7 +149,8 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  return /^https:\/\//.test(url);
+  // return /^https:\/\//.test(url);
+  return url.includes('https://');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -172,7 +173,7 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
